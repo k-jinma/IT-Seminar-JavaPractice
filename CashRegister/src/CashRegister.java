@@ -99,7 +99,14 @@ public class CashRegister {
 			
 			System.out.println("システムを終了します。");
 			break;
+
+		//システム終了
+		default:
+			System.out.println("1または2以外の番号が入力されました。システムを終了します。");
+			break;
+
 		}
+		
 		
 		sc.close();
 
