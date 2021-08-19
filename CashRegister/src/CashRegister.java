@@ -15,6 +15,12 @@ public class CashRegister {
 
 		System.out.print("商品１の金額を入力してください：\\");
 		item1Price = sc.nextInt();
+		
+		//もし０未満の場合はエラーを表示して終了する
+		if( item1Price < 0 ) {
+			System.err.println("金額が不正です。システムを終了します。");
+			System.exit(-1);
+		}
 
 		System.out.print("商品１の数量を入力してください：");
 		item1Count = sc.nextInt();
