@@ -100,7 +100,8 @@ public class CashRegister {
 			System.out.println("システムを終了します。");
 			break;
 		}
-
+		
+		sc.close();
 
 	}
 
