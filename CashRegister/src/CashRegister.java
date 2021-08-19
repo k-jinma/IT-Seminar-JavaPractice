@@ -82,7 +82,7 @@ public class CashRegister {
 				System.out.println("合計：\\" + (syokei + tax));
 
 				// お預かり金額の入力
-				System.out.print("お預かり：");
+				System.out.print("お預かり：\\");
 				azukari = sc.nextInt();
 				if (azukari < 0) {
 					System.err.println("入力金額が不正です。システムを終了します。");
