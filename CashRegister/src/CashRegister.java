@@ -106,7 +106,7 @@ public class CashRegister {
 				sc.close();
 				System.exit(0);
 
-			//システム終了
+			//メニュー再表示
 			default:
 				System.out.println("正しい番号を入力してください。");
 				
