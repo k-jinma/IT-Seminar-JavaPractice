@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class CashRegister {
-
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
@@ -13,8 +12,11 @@ public class CashRegister {
 		int tax; // 消費税
 		int azukari; // 預かり金額
 		int inputNo; // 入力番号
-		int ItemCodeArray[] = { 1, 2, 3, 4, 5 }; //商品コード一覧
-		int ItemPriceArray[] = { 100, 300, 500, 180, 1000}; //商品価格一覧
+		//int ItemCodeArray[] = { 1, 2, 3, 4, 5 }; //商品コード一覧
+		//int ItemPriceArray[] = { 100, 300, 500, 180, 1000}; //商品価格一覧
+		
+		//クラスを利用して、商品一覧を初期化する
+		Item items[] = { new Item(1, "ポッキー", 150), new Item(2, "ポテチ", 100), new Item(3, "チョコレート", 200 )};	//商品一覧
 		
 		while( true ){
 			
@@ -45,14 +47,15 @@ public class CashRegister {
 						itemNo = sc.nextInt();
 						//商品番号を検索して、金額を調べる
 						int i;
-						for( i = 0; i < ItemCodeArray.length; i++ ){
-							if( ItemCodeArray[i] == itemNo ){
-								itemPrice = ItemPriceArray[i];
+						for( i = 0; i < items.length; i++ ){
+							if( items[i].no == itemNo ){
+								itemPrice = items[i].price;
+								System.out.println("商品名：" + items[i].name + "/" + "価格:\\" + items[i].price);
 								break;
 							}
 						}
 
-						if ( i == ItemCodeArray.length) {
+						if ( i == items.length) {
 							System.err.println("商品が見つかりませんでした。");
 							
 						}else{
