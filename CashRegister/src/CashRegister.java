@@ -6,13 +6,15 @@ public class CashRegister {
 
 		Scanner sc = new Scanner(System.in);
 
-		int item1Price; // 商品金額
-		int item1Count; // 商品数量
+		int itemPrice = 0; // 商品金額
+		int itemNo;
+		int itemCount; // 商品数量
 		int syokei; // 小計
 		int tax; // 消費税
 		int azukari; // 預かり金額
 		int inputNo; // 入力番号
-
+		int ItemCodeArray[] = { 1, 2, 3, 4, 5 }; //商品コード一覧
+		int ItemPriceArray[] = { 100, 300, 500, 180, 1000}; //商品価格一覧
 		
 		while( true ){
 			
@@ -39,10 +41,19 @@ public class CashRegister {
 				do{
 
 					while(true){
-						System.out.print("商品" + cnt + "の金額を入力してください：\\");
-						item1Price = sc.nextInt();
-						if (item1Price < 0) {
-							System.err.println("入力金額が不正です。");
+						System.out.print("商品番号を入力してください：");
+						itemNo = sc.nextInt();
+						//商品番号を検索して、金額を調べる
+						int i;
+						for( i = 0; i < ItemCodeArray.length; i++ ){
+							if( ItemCodeArray[i] == itemNo ){
+								itemPrice = ItemPriceArray[i];
+								break;
+							}
+						}
+
+						if ( i > ItemCodeArray.length) {
+							System.err.println("商品が見つかりませんでした。");
 							
 						}else{
 							break;
@@ -51,8 +62,8 @@ public class CashRegister {
 	
 					while(true){
 						System.out.print("商品" + cnt + "の数量を入力してください：");
-						item1Count = sc.nextInt();
-						if (item1Count < 0) {
+						itemCount = sc.nextInt();
+						if (itemCount < 0) {
 							System.err.println("入力数量が不正です。");
 
 						}else{
@@ -61,7 +72,7 @@ public class CashRegister {
 
 					}
 					// 小計の計算
-					syokei += (item1Price * item1Count);
+					syokei += (itemPrice * itemCount);
 	
 					System.out.println("次の商品？(Yes=1 / No=2)：");
 					inputNo = sc.nextInt();
