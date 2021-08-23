@@ -24,7 +24,9 @@ public class CashRegister {
 			System.out.println("------------------------------");
 			System.out.println("キャッシュ・レジスター　メニュー");
 			System.out.println("１：お会計");
-			System.out.println("２：終了");
+			System.out.println("２：売上管理");	//未実装
+			System.out.println("３：在庫管理");	//未実装
+			System.out.println("４：終了");
 			System.out.println("------------------------------");
 			
 			// メニュー番号入力
@@ -113,7 +115,7 @@ public class CashRegister {
 
 				
 			// システム終了
-			case 2:
+			case 4:
 				
 				System.out.println("システムを終了します。");
 				//入力ストリームのクローズ
