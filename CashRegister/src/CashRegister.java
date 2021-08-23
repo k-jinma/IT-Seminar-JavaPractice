@@ -52,7 +52,7 @@ public class CashRegister {
 							}
 						}
 
-						if ( i > ItemCodeArray.length) {
+						if ( i == ItemCodeArray.length) {
 							System.err.println("商品が見つかりませんでした。");
 							
 						}else{
