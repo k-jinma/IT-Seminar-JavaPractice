@@ -1,2 +1,6 @@
-# CashRegister
-IT-Seminarの演習（コンソールアプリケーション）
+# IT-Seminarの演習（コンソールアプリケーション）
+## CashRegister
+講義を進めながら学習したことを踏まえて改良していく
+## Login
+クラス設計と開発の練習
+
