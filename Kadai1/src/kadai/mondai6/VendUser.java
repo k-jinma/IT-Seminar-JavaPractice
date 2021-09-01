@@ -1,6 +1,6 @@
 package kadai.mondai6;
 
-public class Vending {
+class Vending {
     String goodsName;
     int goodsPrice;
     int payment;
