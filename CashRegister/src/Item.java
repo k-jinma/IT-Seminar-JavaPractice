@@ -1,8 +1,8 @@
 public class Item {
-    public int no;      //商品コード
-    public String name; //商品名
-    public int price;   //価格
-    
+    private int no; // 商品No
+    private String name; // 商品名
+    private int price; // 単価
+
     public Item(int no, String mame, int price) {
         this.no = no;
         this.name = mame;
@@ -33,5 +33,5 @@ public class Item {
         this.price = price;
     }
 
-    
+
 }
