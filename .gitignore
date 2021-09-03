@@ -1,1 +1,5 @@
-CashRegister/bin/*
+*/bin/*
+.vscode/settings.json
+Kadai1/.vscode/launch.json
+Kadai1/.vscode/settings.json
+Practice1/.vscode/settings.json
