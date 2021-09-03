@@ -3,9 +3,9 @@ public class Item {
     private String name; // 商品名
     private int price; // 単価
 
-    public Item(int no, String mame, int price) {
+    public Item(int no, String name, int price) {
         this.no = no;
-        this.name = mame;
+        this.name = name;
         this.price = price;
     }
 
@@ -17,12 +17,12 @@ public class Item {
         this.no = no;
     }
 
-    public String getMame() {
+    public String getName() {
         return name;
     }
 
-    public void setMame(String mame) {
-        this.name = mame;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPrice() {
