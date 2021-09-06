@@ -7,6 +7,11 @@ public class App {
     public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
+		// データ準備
+		// ・店舗情報
+		Shop shop = new Shop(1, "コンビニ松山１号店", "愛媛県松山市１番町", "089-111-2222");
+
+		// ・商品情報
     	Item item1 = new Item(1, "ぽてち", 1 , 100);
     	Item item2 = new Item(2, "チョコレート", 1, 250);
 
@@ -14,6 +19,7 @@ public class App {
     	items.add(item1);
     	items.add(item2);
 
+    	// ・従業員情報
     	Employee emp1 = new Employee(1, "管理者", 1);
     	Employee emp2 = new Employee(2, "パート", 2);
     	ArrayList<Employee> emps = new ArrayList<Employee>();
@@ -29,14 +35,14 @@ public class App {
     		if( e.getEmpNo() == inputNo ) {
     			flg = 1;
     			break;
-  
+
     		}
 
     	}
     	if( flg == 0 ) {
     		System.out.println("ログインできません");
     	}
-    	
+
     	if( flg == 1 ) {
         	// キャッシュレジスターシステム
         	// メニュー表示
