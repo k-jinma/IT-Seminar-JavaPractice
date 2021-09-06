@@ -57,7 +57,7 @@
 | コンストラクタ名 | 引数                                                         | 戻り値 |
 | ---------------- | ------------------------------------------------------------ | ------ |
 | Item()           | int, String, String, String, int                             | -      |
-| 処理             | 引数に受け取ったデータををそれぞれ、以下の変数に代入する<br />　shopNo  [int] <br />    shopName  [String]<br />　shopAddress  [String]<br />    shopTel  [String]<br />    shopSales  [int]<br /> |        |
+| 処理             | 引数に受け取ったデータををそれぞれ、以下の変数に代入する<br />　shopNo  [int] <br />　shopName  [String]<br />　shopAddress  [String]<br />　shopTel  [String]<br />　shopSales  [int]<br /> |        |
 
 | メソッド名             | 引数                             | 戻り値                           |
 | ---------------------- | -------------------------------- | -------------------------------- |
