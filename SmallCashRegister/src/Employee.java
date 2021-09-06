@@ -2,9 +2,9 @@ package src;
 
 public class Employee {
 
-	private int empNo;
-	private String empName;
-	private int empRank;
+	private int empNo;		// 従業員No
+	private String empName;	// 従業員名
+	private int empRank;	// 従業員区分(1:管理者,2:パート,3:アルバイト)
 
 	public Employee(int empNo, String empName, int empRank) {
 		super();

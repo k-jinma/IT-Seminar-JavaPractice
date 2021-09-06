@@ -1,11 +1,11 @@
 package src;
 
 public class Shop {
-	private int shopNo;
-	private String shopName;
-	private String shopAddress;
-	private String shopTel;
-	private int shopSales;
+	private int shopNo;			// 店舗No
+	private String shopName;	// 店舗名
+	private String shopAddress;	// 店舗所在地
+	private String shopTel;		// 店舗TEL
+	private int shopSales;		// 店舗売上（1日)
 
 	public Shop(int shopNo, String shopName, String shopAddress, String shopTel) {
 		super();

@@ -1,10 +1,10 @@
 package src;
 
 public class Item {
-	private int itemNo;
-	private String itemName;
-	private int kubun;
-	private int price;
+	private int itemNo;			// 商品No
+	private String itemName;	// 商品名
+	private int kubun;			// 商品区分（1:食品,2:日用品,3:その他）
+	private int price;			// 商品単価
 
 	public Item(int itemNo, String itemName, int kubun, int price) {
 		super();
