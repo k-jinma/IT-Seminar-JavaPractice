@@ -29,6 +29,7 @@ public class App {
 
 		// ログイン処理
 		int inputNo = 0;
+		Employee emp = null;
 		boolean logined = false;
 		do {
 			try {
@@ -39,6 +40,7 @@ public class App {
 				for (Employee e : emps) {
 					if (e.getEmpNo() == inputNo) {
 						logined = true;
+						emp = e;
 						break;
 					}
 				}
@@ -53,29 +55,18 @@ public class App {
 		} while (logined == false);
 
 		// キャッシュレジスターシステム
-		// メニュー表示
-		System.out.println("------------------------------");
-		System.out.println("キャッシュ・レジスター　メニュー");
-		System.out.println("１：お会計");
-		System.out.println("２：？？？？"); //未実装
-		System.out.println("３：？？？？"); //未実装
-		System.out.println("４：ログアウト");
-		System.out.println("------------------------------");
+		do {
+			// メニュー表示
+			emp.dispMenu();
+			// メニュー番号入力
+			System.out.print("番号を入力してください：");
+			inputNo = sc.nextInt();
+			// メニュー実行
+			emp.execute(inputNo);
 
-		// メニュー番号入力
-		inputNo = sc.nextInt();
+		} while (inputNo != 4);
 
-		// お会計処理
-		System.out.print("商品番号を入力してください:");
-		inputNo = sc.nextInt();
 
-		// 商品番号を調べる
-		for (Item i : items) {
-			if (i.getItemNo() == inputNo) {
-				System.out.println(i.getItemName());
-				System.out.println(i.getPrice());
-			}
-		}
 
 	}
 }
