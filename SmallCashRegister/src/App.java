@@ -39,6 +39,7 @@ public class App {
 				for (Employee e : emps) {
 					if (e.getEmpNo() == inputNo) {
 						logined = true;
+						break;
 					}
 				}
 			} catch (InputMismatchException e) {
