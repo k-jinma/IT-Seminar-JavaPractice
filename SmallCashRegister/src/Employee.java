@@ -70,12 +70,23 @@ public class Employee {
 				// 会計処理
 				System.out.println("会計処理をします");
 				System.out.print("商品番号を入力してください：");
-				// 商品検索処理
+				int itemNo = sc.nextInt();
 
 				System.out.print("数量を入力してください：");
-
-				System.out.print("小計>");
-
+				int itemCnt = sc.nextInt();
+				Item item = null;
+				// 商品検索処理
+				for( Item i : items ) {
+					if( itemNo == i.getItemNo() ) {
+						item = i;
+						break;
+					}
+				}
+				System.out.println( item.getItemName() + " "
+									+ item.getPrice() + "円" + " "
+									+ "×" + " "
+									+ itemCnt + "個" + " "
+									+ "=" + " " + item.getPrice() * itemCnt + "円");
 				break;
 			case 2:
 				// 精算処理
