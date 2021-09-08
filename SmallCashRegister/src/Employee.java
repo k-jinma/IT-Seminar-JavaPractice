@@ -1,5 +1,8 @@
 package src;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Employee {
 
 	private int empNo; // 従業員No
@@ -58,11 +61,21 @@ public class Employee {
 		}
 	}
 
-	public void execute(int inputNo) {
+	public void execute(int inputNo, ArrayList<Item> items) {
+
+		Scanner sc = new Scanner(System.in);
+
 		switch (inputNo) {
 			case 1:
 				// 会計処理
 				System.out.println("会計処理をします");
+				System.out.print("商品番号を入力してください：");
+				// 商品検索処理
+
+				System.out.print("数量を入力してください：");
+
+				System.out.print("小計>");
+
 				break;
 			case 2:
 				// 精算処理

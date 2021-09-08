@@ -62,11 +62,9 @@ public class App {
 			System.out.print("番号を入力してください：");
 			inputNo = sc.nextInt();
 			// メニュー実行
-			emp.execute(inputNo);
+			emp.execute(inputNo, items);
 
 		} while (inputNo != 4);
-
-
 
 	}
 }
