@@ -61,7 +61,7 @@ public class Employee {
 		}
 	}
 
-	public void execute(int inputNo, ArrayList<Item> items) {
+	public void execute(int inputNo, ArrayList<Item> items, ArrayList<Sales> sales) {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -76,22 +76,21 @@ public class Employee {
 				int itemCnt = sc.nextInt();
 				Item item = null;
 				// 商品検索処理
-				for( Item i : items ) {
-					if( itemNo == i.getItemNo() ) {
+				for (Item i : items) {
+					if (itemNo == i.getItemNo()) {
 						item = i;
 						break;
 					}
 				}
-				System.out.println( item.getItemName() + " "
-									+ item.getPrice() + "円" + " "
-									+ "×" + " "
-									+ itemCnt + "個" + " "
-									+ "=" + " " + item.getPrice() * itemCnt + "円");
+				System.out.println(item.getItemName() + " " + item.getPrice() + "円" + " " + "×"
+						+ " " + itemCnt + "個" + " " + "=" + " " + item.getPrice() * itemCnt + "円");
 				break;
 			case 2:
 				// 精算処理
 				if (this.empRank == 1) {
 					System.out.println("精算処理をします");
+					// TODO: レジ起動から現在までの売上を表示する
+
 				}
 				break;
 			case 3:
@@ -106,17 +105,6 @@ public class Employee {
 	}
 
 	// 会計処理
-
-	// System.out.print("商品番号を入力してください:");
-	// inputNo = sc.nextInt();
-
-	// // 商品番号を調べる
-	// for (Item i : items) {
-	// if (i.getItemNo() == inputNo) {
-	// System.out.println(i.getItemName());
-	// System.out.println(i.getPrice());
-	// }
-	// }
 
 
 	// 精算処理

@@ -27,6 +27,10 @@ public class App {
 		emps.add(emp1);
 		emps.add(emp2);
 
+		// ・売上記録
+		ArrayList<Sales> sales = new ArrayList<Sales>();
+
+
 		// ログイン処理
 		int inputNo = 0;
 		Employee emp = null;
@@ -62,7 +66,8 @@ public class App {
 			System.out.print("番号を入力してください：");
 			inputNo = sc.nextInt();
 			// メニュー実行
-			emp.execute(inputNo, items);
+			// TODO: salesは精算処理で使用することを検討中ですので今は無視してください
+			emp.execute(inputNo, items, sales);
 
 		} while (inputNo != 4);
 
