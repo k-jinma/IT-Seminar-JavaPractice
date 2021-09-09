@@ -113,8 +113,8 @@ public class Employee {
 					for (Sales s : sales) {
 						for (Item i : items) {
 							if (s.getSalesDetails().get(i) != null) {
-								System.out.println(i.getItemName() + " " + s.getSalesDateTime()
-										+ " " + s.getSalesDetails().get(i));
+								System.out.println(s.getSalesDateTime() + " " + i.getItemName()
+										+ " × " + s.getSalesDetails().get(i));
 
 							}
 						}
