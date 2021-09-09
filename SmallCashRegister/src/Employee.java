@@ -96,7 +96,7 @@ public class Employee {
 					pair.put(item, itemCnt);
 					sales.add(new Sales(LocalDateTime.now(), this.empNo, pair));
 
-					System.out.println("次の商品？(Yes:1, No:2)");
+					System.out.print("次の商品？(Yes:1, No:2)");
 					inputNo = sc.nextInt();
 
 				} while (inputNo != 2);

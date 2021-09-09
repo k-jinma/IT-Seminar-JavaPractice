@@ -76,7 +76,7 @@ public class App {
 			} while (inputNo != 4);
 
 
-			System.out.println("レジを終了?(Yes:999)");
+			System.out.print("レジを終了?(Yes:999):");
 		} while (sc.nextInt() != 999);
 
 		sc.close();
