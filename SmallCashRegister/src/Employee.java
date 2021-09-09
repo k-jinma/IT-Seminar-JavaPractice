@@ -1,6 +1,9 @@
 package src;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Employee {
@@ -69,21 +72,38 @@ public class Employee {
 			case 1:
 				// 会計処理
 				System.out.println("会計処理をします");
-				System.out.print("商品番号を入力してください：");
-				int itemNo = sc.nextInt();
 
-				System.out.print("数量を入力してください：");
-				int itemCnt = sc.nextInt();
-				Item item = null;
-				// 商品検索処理
-				for (Item i : items) {
-					if (itemNo == i.getItemNo()) {
-						item = i;
-						break;
+				// 商品入力
+				do{
+					System.out.print("商品番号を入力してください：");
+					int itemNo = sc.nextInt();
+	
+					System.out.print("数量を入力してください：");
+					int itemCnt = sc.nextInt();
+					Item item = null;
+					// 商品検索処理
+					for (Item i : items) {
+						if (itemNo == i.getItemNo()) {
+							item = i;
+							break;
+						}
 					}
-				}
-				System.out.println(item.getItemName() + " " + item.getPrice() + "円" + " " + "×"
-						+ " " + itemCnt + "個" + " " + "=" + " " + item.getPrice() * itemCnt + "円");
+					System.out.println(item.getItemName() + " " + item.getPrice() + "円" + " " + "×"
+							+ " " + itemCnt + "個" + " " + "=" + " " + item.getPrice() * itemCnt + "円");
+
+					Map<Item, Integer> pair = new HashMap<>();
+					Integer no = 1;
+					pair.put(item, no );
+					sales.add( new Sales( LocalDateTime.now(), this.empNo, pair));
+					
+					System.out.println("次の商品？(Yes:1, No:2)");
+					inputNo = sc.nextInt();
+
+				}while( inputNo != 2 );
+
+				// 合計計算、釣銭入力
+
+
 				break;
 			case 2:
 				// 精算処理

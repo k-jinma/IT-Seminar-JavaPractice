@@ -71,5 +71,10 @@ public class App {
 
 		} while (inputNo != 4);
 
+		for( Sales s : sales ){
+			System.out.println( s.getSalesDateTime() + " " + s.getSalesDetails().size() );
+		}
+		System.out.println();
+
 	}
 }
