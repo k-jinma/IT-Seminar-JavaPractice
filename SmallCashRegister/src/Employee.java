@@ -64,7 +64,7 @@ public class Employee {
 		}
 	}
 
-	public void execute(int inputNo, ArrayList<Item> items, ArrayList<Sales> sales) {
+	public void execute(int inputNo, Shop shop, ArrayList<Item> items, ArrayList<Sales> sales) {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -101,8 +101,16 @@ public class Employee {
 
 				} while (inputNo != 2);
 
-				// 合計計算、釣銭入力
+				// TODO: 合計計算、釣銭入力
 
+
+				// TODO: レシートフッター
+				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+				System.out.println("レシートNo" + " " + sales.get(sales.size() - 1).getSalesNo());
+				System.out.println("担当No" + " " + this.getEmpNo());
+				System.out.println(shop.getShopName() + " " + shop.getShopAddress());
+				System.out.println("TEL" + " " + shop.getShopTel());
+				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 
 				break;
 			case 2:

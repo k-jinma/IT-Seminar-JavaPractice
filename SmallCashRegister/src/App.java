@@ -71,7 +71,7 @@ public class App {
 				inputNo = sc.nextInt();
 				// メニュー実行
 				// TODO: salesは精算処理で使用することを検討中ですので今は無視してください
-				emp.execute(inputNo, items, sales);
+				emp.execute(inputNo, shop, items, sales);
 
 			} while (inputNo != 4);
 

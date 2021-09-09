@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Sales {
-    int salesNo; // 売上No
-    LocalDateTime salesDateTime; // 売上日時
-    int empNo; // 従業員No
-    Map<Item, Integer> salesDetails = new HashMap<>(); // 売上明細(商品,売上数)
+    private static int salesNo = 0; // 売上No
+    private LocalDateTime salesDateTime; // 売上日時
+    private int empNo; // 従業員No
+    private Map<Item, Integer> salesDetails = new HashMap<>(); // 売上明細(商品,売上数)
 
     public Sales(LocalDateTime salesDateTime, int empNo, Map<Item, Integer> salesDetails) {
         // 売上Noは自動採番
-        this.salesNo++;
+        salesNo++;
         this.salesDateTime = salesDateTime;
         this.empNo = empNo;
         this.salesDetails = salesDetails;
@@ -20,10 +20,6 @@ public class Sales {
 
     public int getSalesNo() {
         return salesNo;
-    }
-
-    public void setSalesNo(int salesNo) {
-        this.salesNo = salesNo;
     }
 
     public LocalDateTime getSalesDateTime() {
