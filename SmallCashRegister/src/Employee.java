@@ -74,10 +74,10 @@ public class Employee {
 				System.out.println("会計処理をします");
 
 				// 商品入力
-				do{
+				do {
 					System.out.print("商品番号を入力してください：");
 					int itemNo = sc.nextInt();
-	
+
 					System.out.print("数量を入力してください：");
 					int itemCnt = sc.nextInt();
 					Item item = null;
@@ -89,17 +89,17 @@ public class Employee {
 						}
 					}
 					System.out.println(item.getItemName() + " " + item.getPrice() + "円" + " " + "×"
-							+ " " + itemCnt + "個" + " " + "=" + " " + item.getPrice() * itemCnt + "円");
+							+ " " + itemCnt + "個" + " " + "=" + " " + item.getPrice() * itemCnt
+							+ "円");
 
 					Map<Item, Integer> pair = new HashMap<>();
-					Integer no = 1;
-					pair.put(item, no );
-					sales.add( new Sales( LocalDateTime.now(), this.empNo, pair));
-					
+					pair.put(item, itemCnt);
+					sales.add(new Sales(LocalDateTime.now(), this.empNo, pair));
+
 					System.out.println("次の商品？(Yes:1, No:2)");
 					inputNo = sc.nextInt();
 
-				}while( inputNo != 2 );
+				} while (inputNo != 2);
 
 				// 合計計算、釣銭入力
 
@@ -110,6 +110,15 @@ public class Employee {
 				if (this.empRank == 1) {
 					System.out.println("精算処理をします");
 					// TODO: レジ起動から現在までの売上を表示する
+					for (Sales s : sales) {
+						for (Item i : items) {
+							if (s.getSalesDetails().get(i) != null) {
+								System.out.println(i.getItemName() + " " + s.getSalesDateTime()
+										+ " " + s.getSalesDetails().get(i));
+
+							}
+						}
+					}
 
 				}
 				break;
@@ -122,6 +131,7 @@ public class Employee {
 			default:
 				break;
 		}
+
 	}
 
 	// 会計処理

@@ -8,7 +8,7 @@ public class Sales {
     int salesNo; // 売上No
     LocalDateTime salesDateTime; // 売上日時
     int empNo; // 従業員No
-    Map<Item, Integer> salesDetails = new HashMap<>(); // 売上明細
+    Map<Item, Integer> salesDetails = new HashMap<>(); // 売上明細(商品,売上数)
 
     public Sales(LocalDateTime salesDateTime, int empNo, Map<Item, Integer> salesDetails) {
         // 売上Noは自動採番
