@@ -72,7 +72,7 @@ public class Employee {
 			case 1:
 				// 会計処理
 				System.out.println("会計処理をします");
-
+				int goukei = 0;
 				// 商品入力
 				do {
 					System.out.print("商品番号を入力してください：");
@@ -92,9 +92,14 @@ public class Employee {
 							+ " " + itemCnt + "個" + " " + "=" + " " + item.getPrice() * itemCnt
 							+ "円");
 
+					// 合計金額を累積
+					goukei +=  (item.getPrice() * itemCnt);
+
+					// 売上明細に記録する
 					Map<Item, Integer> pair = new HashMap<>();
 					pair.put(item, itemCnt);
 					sales.add(new Sales(LocalDateTime.now(), this.empNo, pair));
+					
 
 					System.out.print("次の商品？(Yes:1, No:2)");
 					inputNo = sc.nextInt();
@@ -102,7 +107,18 @@ public class Employee {
 				} while (inputNo != 2);
 
 				// TODO: 合計計算、釣銭入力
+				int ukeKin = 0;
+				System.out.println("小計：" + goukei + " 円");
+				int tax = (int)(goukei * 0.1);
+				System.out.println("消費税：" + tax + " 円");
+				System.out.println("合計：" + (goukei + tax) + " 円");
+				System.out.print("受取代金：");
+				ukeKin = sc.nextInt();
+				System.out.println("お釣り：" + ((goukei + tax) - ukeKin) + " 円" );
 
+				// 売上合計記録する
+				shop.addShopSales(goukei);
+				shop.addSalesTax(tax);
 
 				// TODO: レシートフッター
 				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
@@ -117,16 +133,20 @@ public class Employee {
 				// 精算処理
 				if (this.empRank == 1) {
 					System.out.println("精算処理をします");
-					// TODO: レジ起動から現在までの売上を表示する
+
 					for (Sales s : sales) {
 						for (Item i : items) {
 							if (s.getSalesDetails().get(i) != null) {
 								System.out.println(s.getSalesDateTime() + " " + i.getItemName()
-										+ " × " + s.getSalesDetails().get(i));
+										+ " × " + s.getSalesDetails().get(i) + " = " + i.getPrice() * s.getSalesDetails().get(i) + "円");
 
 							}
 						}
 					}
+					System.out.print("売上額：" + shop.getShopSales() + " 円");
+					System.out.println("  ");
+					System.out.println("消費税：" + shop.getShopSalesTax() + " 円");
+					System.out.println("総売上額：" + (shop.getShopSales() + shop.getShopSalesTax()) + " 円");
 
 				}
 				break;

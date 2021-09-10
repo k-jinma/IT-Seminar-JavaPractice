@@ -5,7 +5,8 @@ public class Shop {
 	private String shopName;	// 店舗名
 	private String shopAddress;	// 店舗所在地
 	private String shopTel;		// 店舗TEL
-	private int shopSales;		// 店舗売上（1日)
+	private int shopSales;		// 店舗売上
+	private int shopSalesTax;	// 売上消費税
 
 	public Shop(int shopNo, String shopName, String shopAddress, String shopTel) {
 		super();
@@ -13,6 +14,22 @@ public class Shop {
 		this.shopName = shopName;
 		this.shopAddress = shopAddress;
 		this.shopTel = shopTel;
+	}
+
+	public void addShopSales(int sales){
+		this.shopSales += sales;
+	}
+
+	public void addSalesTax( int tax ){
+		this.shopSalesTax += tax;
+	}
+
+	public int getShopSalesTax() {
+		return shopSalesTax;
+	}
+
+	public void setShopSalesTax(int shopSalesTax) {
+		this.shopSalesTax = shopSalesTax;
 	}
 
 	public int getShopNo() {

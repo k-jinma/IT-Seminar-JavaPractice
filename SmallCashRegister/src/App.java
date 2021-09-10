@@ -33,8 +33,6 @@ public class App {
 		ArrayList<Sales> sales = new ArrayList<Sales>();
 
 		do {
-
-
 			// ログイン処理
 			int inputNo = 0;
 			Employee emp = null;
