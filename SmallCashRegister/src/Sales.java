@@ -11,11 +11,14 @@ public class Sales {
     private Map<Item, Integer> salesDetails = new HashMap<>(); // 売上明細(商品,売上数)
 
     public Sales(LocalDateTime salesDateTime, int empNo, Map<Item, Integer> salesDetails) {
-        // 売上Noは自動採番
-        salesNo++;
+
         this.salesDateTime = salesDateTime;
         this.empNo = empNo;
         this.salesDetails = salesDetails;
+    }
+
+    public static void addSalesNo() {
+        salesNo++;
     }
 
     public int getSalesNo() {
