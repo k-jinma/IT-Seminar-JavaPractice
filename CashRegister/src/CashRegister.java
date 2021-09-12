@@ -1,16 +1,18 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CashRegister {
     private int registerNo; // レジスターNo
-    private Shop shop;  // 店舗情報
-    private ArrayList<Employee> employee;   // 従業員一覧
-    private static final double tax = 0.1;  // 消費税
+    private Shop shop; // 店舗情報
+    private ArrayList<Employee> employee; // 従業員一覧
+    private static final double tax = 0.1; // 消費税
     private ArrayList<SalesDetail> salesDetails;
-    private ArrayList<Item> items;	// 商品情報
+    private ArrayList<Item> items; // 商品情報
 
-    public CashRegister(int registerNo,
-    		Shop shop, ArrayList<Employee> employee,
-    		ArrayList<Item> items) {
+    Scanner sc = new Scanner(System.in);
+
+    public CashRegister(int registerNo, Shop shop, ArrayList<Employee> employee,
+            ArrayList<Item> items) {
 
         this.registerNo = registerNo;
         this.shop = shop;
@@ -19,14 +21,14 @@ public class CashRegister {
     }
 
     public ArrayList<Item> getItems() {
-		return items;
-	}
+        return items;
+    }
 
-	public void setItems(ArrayList<Item> items) {
-		this.items = items;
-	}
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
 
-	public int getRegisterNo() {
+    public int getRegisterNo() {
         return registerNo;
     }
 
@@ -62,7 +64,21 @@ public class CashRegister {
         this.salesDetails = salesDetails;
     }
 
+    public Employee login() {
 
+        do {
+            System.out.println("ログイン画面");
+            int inputNo = sc.nextInt();
+            for (Employee emp : this.getEmployee()) {
+                if (inputNo == emp.getEmpNo()) {
+                    return emp;
+
+                }
+            }
+            System.out.println("従業員コードが見つかりません");
+        } while (true);
+
+    }
 
 
 }

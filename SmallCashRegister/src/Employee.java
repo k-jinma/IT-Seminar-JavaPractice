@@ -47,20 +47,20 @@ public class Employee {
 
 		if (this.empRank == 1) {
 			// 管理者メニューを表示する
-			System.out.println("------------------------------");
+			System.out.println("----------------------------------");
 			System.out.println("キャッシュ・レジスター　メニュー");
 			System.out.println("１：お会計");
 			System.out.println("２：精算");
 			System.out.println("４：ログアウト");
-			System.out.println("------------------------------");
+			System.out.println("----------------------------------");
 
 		} else if (this.empRank == 2 || this.empRank == 3) {
 			// パート・アルバイトメニューを表示する
-			System.out.println("------------------------------");
+			System.out.println("----------------------------------");
 			System.out.println("キャッシュ・レジスター　メニュー");
 			System.out.println("１：お会計");
 			System.out.println("４：ログアウト");
-			System.out.println("------------------------------");
+			System.out.println("----------------------------------");
 		}
 	}
 
@@ -71,7 +71,7 @@ public class Employee {
 		switch (inputNo) {
 			case 1:
 				// 会計処理
-				System.out.println("会計処理をします");
+				System.out.println("=============会計処理=============");
 				int goukei = 0;
 				// 商品入力
 				do {
@@ -108,6 +108,7 @@ public class Employee {
 
 				// TODO: 合計計算、釣銭入力
 				int ukeKin = 0;
+				System.out.println("----------------------------------");
 				System.out.println("小計：" + goukei + " 円");
 				int tax = (int) (goukei * 0.1);
 				System.out.println("消費税：" + tax + " 円");
@@ -115,6 +116,7 @@ public class Employee {
 				System.out.print("受取代金：");
 				ukeKin = sc.nextInt();
 				System.out.println("お釣り：" + ((goukei + tax) - ukeKin) + " 円");
+				System.out.println("----------------------------------");
 
 				// 売上合計記録する
 				shop.addShopSales(goukei);
@@ -124,12 +126,12 @@ public class Employee {
 				Sales.addSalesNo();
 
 				// TODO: レシートフッター
-				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 				System.out.println("レシートNo" + " " + sales.get(sales.size() - 1).getSalesNo());
 				System.out.println("担当No" + " " + this.getEmpNo());
 				System.out.println(shop.getShopName() + " " + shop.getShopAddress());
 				System.out.println("TEL" + " " + shop.getShopTel());
-				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+				System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 
 				break;
 			case 2:
@@ -152,7 +154,6 @@ public class Employee {
 					System.out.println("消費税：" + shop.getShopSalesTax() + " 円");
 					System.out.println(
 							"総売上額：" + (shop.getShopSales() + shop.getShopSalesTax()) + " 円");
-
 				}
 				break;
 			case 3:
