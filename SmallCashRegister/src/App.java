@@ -13,14 +13,26 @@ public class App {
 		Shop shop = new Shop(1, "コンビニ松山１号店", "愛媛県松山市１番町", "089-111-2222");
 
 		// ・商品情報
-		Item item1 = new Item(1, "ぽてち", 1, 100);
-		Item item2 = new Item(2, "チョコレート", 1, 250);
-		Item item3 = new Item(3, "シャンプー", 2, 250);
+		Item item1 = new Item(1, "手巻きおにぎり　焼き鮭ほぐし", 1, 150);
+		Item item2 = new Item(2, "手巻きおにぎり　おかか", 1, 110);
+		Item item3 = new Item(3, "手巻きおにぎり　日高昆布", 1, 120);
+		Item item4 = new Item(4, "サントリー　プレミアムボス　ブラック　390g", 1, 150);
+		Item item5 = new Item(5, "アサヒ　ワンダ　モーニングショット　185g", 1, 120);
+		Item item6 = new Item(6, "アサヒ　十六茶　660ml", 1, 150);
+		Item item7 = new Item(7, "オリジナル　マスク　7枚", 2, 270);
+		Item item8 = new Item(8, "トイレットティシューコンパクト 8ロール シングル ", 2, 430);
+		Item item9 = new Item(9, "レジ袋", 3, 3);
 
 		ArrayList<Item> items = new ArrayList<Item>();
 		items.add(item1);
 		items.add(item2);
 		items.add(item3);
+		items.add(item4);
+		items.add(item5);
+		items.add(item6);
+		items.add(item7);
+		items.add(item8);
+		items.add(item9);
 
 		// ・従業員情報
 		Employee emp1 = new Employee(1, "管理者", 1);
