@@ -75,7 +75,7 @@ public class Employee {
 				int goukei = 0;
 				// 商品入力
 				do {
-					System.out.print("商品番号を入力してください：");
+					System.out.print("商品番号を入力してください(レジ袋 9)：");
 					int itemNo = sc.nextInt();
 
 					System.out.print("数量を入力してください：");
@@ -104,7 +104,8 @@ public class Employee {
 					System.out.print("次の商品？(Yes:1, No:2)");
 					inputNo = sc.nextInt();
 
-				} while (inputNo != 2);
+				} while (inputNo == 1);
+
 
 				// TODO: 合計計算、釣銭入力
 				int ukeKin = 0;
@@ -167,14 +168,5 @@ public class Employee {
 		}
 
 	}
-
-	// 会計処理
-
-
-	// 精算処理
-
-
-
-	// ログアウト
 
 }
