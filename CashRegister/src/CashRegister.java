@@ -68,6 +68,7 @@ public class CashRegister {
 
         do {
             System.out.println("ログイン画面");
+            System.out.print("従業員番号：");
             int inputNo = sc.nextInt();
             for (Employee emp : this.getEmployee()) {
                 if (inputNo == emp.getEmpNo()) {
