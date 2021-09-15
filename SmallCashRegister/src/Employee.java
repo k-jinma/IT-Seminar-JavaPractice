@@ -68,14 +68,17 @@ public class Employee {
 
 		Scanner sc = new Scanner(System.in);
 
+
 		switch (inputNo) {
 			case 1:
 				// 会計処理
 				System.out.println("=============会計処理=============");
+				// 売上明細
+				Map<Item, Integer> pair = new HashMap<>();
 				int goukei = 0;
 				// 商品入力
 				do {
-					System.out.print("商品番号を入力してください(レジ袋 9)：");
+					System.out.print("商品番号を入力してください：");
 					int itemNo = sc.nextInt();
 
 					System.out.print("数量を入力してください：");
@@ -96,15 +99,37 @@ public class Employee {
 					goukei += (item.getPrice() * itemCnt);
 
 					// 売上明細に記録する
-					Map<Item, Integer> pair = new HashMap<>();
 					pair.put(item, itemCnt);
 					sales.add(new Sales(LocalDateTime.now(), this.empNo, pair));
 
 
-					System.out.print("次の商品？(Yes:1, No:2)");
+					System.out.print("次の商品？(Yes:1, No:2):");
 					inputNo = sc.nextInt();
 
 				} while (inputNo == 1);
+
+
+				// レジ袋の有無
+				System.out.print("レジ袋？(Yes:1, No:2):");
+				inputNo = sc.nextInt();
+				// 売上明細
+				Map<Item, Integer> pair2 = new HashMap<>();
+				int itemNo = 9;	// レジ袋
+				Item item = null;
+				if( inputNo == 1 ) {
+					for (Item i : items) {
+						if (itemNo == i.getItemNo()) {
+							item = i;
+							break;
+						}
+					}
+					// 合計金額を累積
+					goukei += item.getPrice();
+
+					// 売上明細に記録する
+					pair2.put(item, 1);
+					sales.add(new Sales(LocalDateTime.now(), this.empNo, pair2));
+				}
 
 
 				// TODO: 合計計算、釣銭入力
@@ -116,7 +141,7 @@ public class Employee {
 				System.out.println("合計：" + (goukei + tax) + " 円");
 				System.out.print("受取代金：");
 				ukeKin = sc.nextInt();
-				System.out.println("お釣り：" + ((goukei + tax) - ukeKin) + " 円");
+				System.out.println("お釣り：" + (ukeKin - (goukei + tax)) + " 円");
 				System.out.println("----------------------------------");
 
 				// 売上合計記録する
@@ -164,6 +189,7 @@ public class Employee {
 				System.out.println("ログアウト処理をします");
 				break;
 			default:
+				sc.close();
 				break;
 		}
 
