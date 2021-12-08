@@ -15,11 +15,11 @@ public class UseMobile {
 
 		MotorBike motorBike = new MotorBike();
 		mob = motorBike;
-		ar.add(motorBike);
+		ar.add(mob);
 
 		Bicycle bicycle = new Bicycle();
 		mob = bicycle;
-		ar.add(bicycle);
+		ar.add(mob);
 
 		for( Mobile m : ar ) {
 			m.operate();
