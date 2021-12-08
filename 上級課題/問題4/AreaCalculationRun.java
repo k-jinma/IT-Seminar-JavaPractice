@@ -12,13 +12,18 @@ public class AreaCalculationRun {
 			ac.disp();
 
 		} catch (AreaTranscendException e) {
-			System.out.println("ERROR!! 円の面積より四角形の面積の方が大きいです");
+			System.out.println("ERROR!! 円の面積より四角形の面積の方が大きいです。");
+
+			//独自のエラーメッセージを定義している場合は以下のように呼び出す
+			System.out.println(e.getMessage() );
 
 		} catch (ArrayIndexOutOfBoundsException e ) {
-			System.out.println("ERROR!! コマンドラインの引数の入力数が不足しています");
+			System.out.println("ERROR!! コマンドライン引数の入力数が不足しています。");
+
 		} catch (NumberFormatException e ) {
-			System.out.println("ERROR!! コマンドラインの引数に文字データが入力されました");
+			System.out.println("ERROR!! コマンドライン引数に文字データが入力されました。");
 		}
+
 	}
 
 }
